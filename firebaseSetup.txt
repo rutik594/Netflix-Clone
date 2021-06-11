@@ -1,0 +1,8 @@
+1.first we have to make a project on firebase console.
+2.On Visual Studio cmd write command 'firebase login',it will take you into browser and ask for account authorization.
+3.After completing project,there are there 3 commands to follow:
+i)firebase init
+ii)npm run build
+iii)npm deploy
+And you are done with deploying website.
+Happy Coding!!!

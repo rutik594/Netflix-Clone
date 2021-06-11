@@ -1,0 +1,40 @@
+1.react-youtube :i)It is a package which allows to play youtube videos into our application.
+ii)It takes two parameters a)videoId={trailerUrl}:It takes params named as v b)opts={opts}:it specifies how our video should look like for eg. const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+  for more information go to:https://www.npmjs.com/package/react-youtube.
+
+2.i)If we want to get any url params there is simple class :URLSearchParams(new URL(url).search);
+ii)after doing this we will get access to all functions of URLSearchParams.
+iii)so we can access get function of URLSearchParams like these:     setTrailerUrl(urlParams.get("v"));
+iv)These will get v parameter.eg.trailerUrl gmRKv7n2If8
+
+3. movie-trailer:It is a package which gives us url based on name,source,title.It is a promised based function.
+eg. movieTrailer(movie?.title || movie?.name || movie?.source)
+        .then((url) => {
+            do something with url
+        })
+
+4.The most smooth thing i have learned in this project is axios create function.It allows us to avoid writing static url routes.
+Like in this project:https://api.themoviedb.org/3 is static route to all routes.
+eg.const instance = axios.create({
+  baseURL: "https://api.themoviedb.org/3",
+});
+By writing this we can simply write this big url 'https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US' to only this instance.get('/trending/all/week?api_key=${API_KEY}&language=en-US')
+
+5.css magic
+i)object-fit:contain which maintains image aspect ratio which means it does not stretches the image.it maintains height and width properly.
+ii)linear-gradient:which gives nice spread of combination of colors.linear-gradient(direction,color1,color2,...)
+
+6.Scrollbar problem
+i)The story is that in this project there is a hidden horizontal scrollar requirement. 
+ii)So the way is we have to make overflow-x:scroll which will give both visible scrollbar and its functionality.
+and second part is to hide scrollbar and the way to do that is .row_posters::-webkit-scrollbar {
+  display: none;
+}
+Now the problem is it hides the scrollbar but it also removes functionality of scrollbar.
+I have searched for so many solutions. None of them works and which one worked they are adjustable solutions which is a bad practice.
